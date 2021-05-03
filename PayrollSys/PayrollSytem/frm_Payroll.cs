@@ -71,7 +71,6 @@ namespace PayrollSytem
             dtgParollList.Columns[0].Visible = false;
             funct.ResponsiveDtg(dtgParollList);
 
-
             sql = "SELECT concat(autoname,strnum) as auto FROM autonumber WHERE id = 1";
             config.singleResult(sql);
             if (config.dt.Rows.Count > 0)
@@ -108,10 +107,7 @@ namespace PayrollSytem
 
         private void frm_Payroll_Load(object sender, EventArgs e)
         {
-            load_data();
-
-           
-        
+            load_data(); 
         }
 
         private void txtPAssignCode_TextChanged(object sender, EventArgs e)
@@ -149,8 +145,7 @@ namespace PayrollSytem
         private void txtPNoDays_TextChanged(object sender, EventArgs e)
         {
             try
-            {
-                
+            { 
                 double rateWage, grossincome, neticome,ot,holpay;
 
                 ot = double.Parse(txtPregOt.Text);
@@ -228,8 +223,6 @@ namespace PayrollSytem
         {
             try
             {
-
-
 
                 double total_hol, grossincome, neticome, ot, holpay, rateWage;
 
@@ -385,6 +378,11 @@ namespace PayrollSytem
         private void txtpsearch_TextChanged(object sender, EventArgs e)
         {
             load_data();
+        }
+
+        private void dtgParollList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

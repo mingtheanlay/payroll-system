@@ -453,6 +453,7 @@
             this.dtgParollList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgParollList.Size = new System.Drawing.Size(838, 373);
             this.dtgParollList.TabIndex = 0;
+            this.dtgParollList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgParollList_CellContentClick);
             // 
             // Label15
             // 

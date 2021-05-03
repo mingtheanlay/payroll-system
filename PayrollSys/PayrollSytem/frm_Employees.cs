@@ -33,7 +33,7 @@ namespace PayrollSytem
             }
             else
             {
-                if(rdomale.Checked)
+                if (rdomale.Checked)
                 {
                     rdo = "Male";
                 }
@@ -41,16 +41,23 @@ namespace PayrollSytem
                 {
                     rdo = "Female";
                 }
-                sql = "INSERT INTO `employee_workinfo` (`emp_code`, `d_rate`, `p_method`, `position`, `w_status`, `d_hired`)" 
-                        + " VALUES ('" + txtcode.Text + "','" + txtdrate.Text + "','" + txtpmethod.Text + "','" + txtposition.Text 
-                        + "','" + txtworkstatus.Text + "','" + dtpdhired.Text + "')";
+                EmployeeFactory empFactory = new GeneralEmployeeFactory(txtcode.Text, txtfname.Text, txtmname.Text, 
+                    txtlname.Text, txtaddress.Text, txtcontact.Text, txtstatus.Text, txtbplace.Text, 
+                    txtage.Text, txtcontact.Text, txtdrate.Text, txtposition.Text, rdo, dtpdbirth.Text, 
+                    txtpmethod.Text, txtworkstatus.Text, dtpdhired.Text);
+
+                Employee emp = empFactory.GetEmployee();
+
+                sql = "INSERT INTO `employee_workinfo` (`emp_code`, `d_rate`, `p_method`, `position`, `w_status`, `d_hired`)"
+                      + " VALUES ('" + emp.EmpCode + "','" + emp.DailyRate + "','" + emp.PaymentMethod + "','" + emp.Position
+                      + "','" + emp.WorkStatus + "','" + emp.DateHired + "')";
                 config.Execute_Query(sql);
 
-                sql = "INSERT INTO `employee` (`emp_code`, `emp_fname`, `emp_lname`, `emp_mname`" 
+                sql = "INSERT INTO `employee` (`emp_code`, `emp_fname`, `emp_lname`, `emp_mname`"
                    + ", `address`, `contact`, `status`, `birth_date`, `birth_place`, `emp_sex`, `emp_age`"
-                   + ", `emerg_contct`) VALUES ('" + txtcode.Text + "','" + txtfname.Text + "','" + txtlname.Text
-                   + "','" + txtmname.Text + "','" + txtaddress.Text + "'," + txtcontact.Text + ",'" + txtstatus.Text
-                   + "','" + dtpdbirth.Text + "','" + txtbplace.Text + "','" + rdo + "'," + txtage.Text + ",'" + txtcontact.Text + "')";
+                   + ", `emerg_contct`) VALUES ('" + emp.EmpCode + "','" + emp.FirstName + "','" + emp.LastName
+                   + "','" + emp.MiddleName + "','" + emp.Address + "'," + emp.Contact + ",'" + emp.Status
+                   + "','" + emp.Dob + "','" + emp.BirthPlace + "','" + emp.Sex + "'," + emp.Age + ",'" + emp.Emergency + "')";
                 config.Execute_CUD(sql, "Error to execute.", "Data has been saved in the database.");
                 btnempnew_Click(sender, e);
             }
@@ -195,8 +202,6 @@ namespace PayrollSytem
             TabControl2.SelectedTab = TabPage6;
             btnempsave.Enabled = false;
             btnempupdate.Enabled = true;
-
-
         }
     }
 }
