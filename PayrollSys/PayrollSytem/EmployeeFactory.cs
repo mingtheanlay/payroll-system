@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PayrollSytem
 {
+    // Factory Design Pattern
     public abstract class Employee
     {
         public abstract string EmpCode { set; get; }

@@ -13,7 +13,7 @@ namespace PayrollSytem.Includes
     class SQLConfig
     {
 
-        private MySqlConnection con = new MySqlConnection("server=localhost; user id=root; pwd=root; database=payrolldb; sslMode=none");
+        private MySqlConnection con = new MySqlConnection("server=localhost; user id=root; database=payrolldb; sslMode=none");
         private MySqlCommand cmd;
         private MySqlDataAdapter da;
         public DataTable dt; 

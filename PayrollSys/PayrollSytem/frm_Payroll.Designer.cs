@@ -319,6 +319,7 @@
             this.Label5.Size = new System.Drawing.Size(66, 13);
             this.Label5.TabIndex = 9;
             this.Label5.Text = "No. of Days:";
+            this.Label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // txtPPayPeriod
             // 
@@ -460,9 +461,9 @@
             this.Label15.AutoSize = true;
             this.Label15.Location = new System.Drawing.Point(14, 92);
             this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(34, 13);
+            this.Label15.Size = new System.Drawing.Size(33, 13);
             this.Label15.TabIndex = 24;
-            this.Label15.Text = "SSS :";
+            this.Label15.Text = "Meal:";
             // 
             // TabControl3
             // 
@@ -716,9 +717,9 @@
             this.Label16.AutoSize = true;
             this.Label16.Location = new System.Drawing.Point(14, 65);
             this.Label16.Name = "Label16";
-            this.Label16.Size = new System.Drawing.Size(35, 13);
+            this.Label16.Size = new System.Drawing.Size(91, 13);
             this.Label16.TabIndex = 22;
-            this.Label16.Text = "PHIC:";
+            this.Label16.Text = "Health Insurance:";
             // 
             // Label14
             // 

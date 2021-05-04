@@ -20,34 +20,35 @@ namespace PayrollSytem
 
         public void enable_menu(string user)
         {
+            Ability ability;
             switch (user)
             {
                 case "Administrator":
-                    Ability adminAbility = new AdminPermission();
-                    adminAbility.permission();
-                    tsLogin.Text = adminAbility.Logout;
-                    tsLogin.Image = adminAbility.Img;
-                    tsEmployee.Enabled = adminAbility.Employee;
-                    tsPayroll.Enabled = adminAbility.Payroll;
-                    tsUser.Enabled = adminAbility.User;
+                    ability = new AdminPermission();
+                    ability.permission();
+                    tsLogin.Text = ability.Status;
+                    tsLogin.Image = ability.Img;
+                    tsEmployee.Enabled = ability.Employee;
+                    tsPayroll.Enabled = ability.Payroll;
+                    tsUser.Enabled = ability.User;
                     break;
                 case "Staff":
-                    Ability staffAbility = new StaffPermission();
-                    staffAbility.permission();
-                    tsLogin.Text = staffAbility.Logout;
-                    tsLogin.Image = staffAbility.Img;
-                    tsEmployee.Enabled = staffAbility.Employee;
-                    tsPayroll.Enabled = staffAbility.Payroll;
-                    tsUser.Enabled = staffAbility.User;
+                    ability = new StaffPermission();
+                    ability.permission();
+                    tsLogin.Text = ability.Status;
+                    tsLogin.Image = ability.Img;
+                    tsEmployee.Enabled = ability.Employee;
+                    tsPayroll.Enabled = ability.Payroll;
+                    tsUser.Enabled = ability.User;
                     break;
                 case "Guest":
-                    Ability guestAbility = new GuestPermission();
-                    guestAbility.permission();
-                    tsLogin.Text = guestAbility.Logout;
-                    tsLogin.Image = guestAbility.Img;
-                    tsEmployee.Enabled = guestAbility.Employee;
-                    tsPayroll.Enabled = guestAbility.Payroll;
-                    tsUser.Enabled = guestAbility.User;
+                    ability = new GuestPermission();
+                    ability.permission();
+                    tsLogin.Text = ability.Status;
+                    tsLogin.Image = ability.Img;
+                    tsEmployee.Enabled = ability.Employee;
+                    tsPayroll.Enabled = ability.Payroll;
+                    tsUser.Enabled = ability.User;
                     break;
             }
         }
@@ -101,12 +102,13 @@ namespace PayrollSytem
             }
             else
             {
-                tsLogin.Text = "Login";
-                tsLogin.Image = PayrollSytem.Properties.Resources._lock;
-                tsEmployee.Enabled = false;
-                tsPayroll.Enabled = false;
-                tsUser.Enabled = false;
-                tsReport.Enabled = false;
+                Ability noPermission = new NoPermission();
+                noPermission.permission();
+                tsLogin.Text = noPermission.Status;
+                tsLogin.Image = noPermission.Img;
+                tsEmployee.Enabled = noPermission.Employee;
+                tsPayroll.Enabled = noPermission.Payroll;
+                tsUser.Enabled = noPermission.User;
             }
         }
     }

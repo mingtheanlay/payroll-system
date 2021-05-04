@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btndelete = new System.Windows.Forms.Button();
             this.Label46 = new System.Windows.Forms.Label();
             this.dtgemplist = new System.Windows.Forms.DataGridView();
             this.TabPage7 = new System.Windows.Forms.TabPage();
+            this.btn_edit = new System.Windows.Forms.Button();
             this.txtempsearch = new System.Windows.Forms.TextBox();
             this.btnempnew = new System.Windows.Forms.Button();
             this.btnempsave = new System.Windows.Forms.Button();
@@ -75,7 +77,7 @@
             this.txtposition = new System.Windows.Forms.TextBox();
             this.txtdrate = new System.Windows.Forms.TextBox();
             this.dtpdhired = new System.Windows.Forms.DateTimePicker();
-            this.btn_edit = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgemplist)).BeginInit();
             this.TabPage7.SuspendLayout();
             this.GroupBox9.SuspendLayout();
@@ -135,6 +137,16 @@
             this.TabPage7.TabIndex = 1;
             this.TabPage7.Text = "Employee\'s List";
             this.TabPage7.UseVisualStyleBackColor = true;
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.Location = new System.Drawing.Point(572, 369);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(129, 23);
+            this.btn_edit.TabIndex = 23;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // txtempsearch
             // 
@@ -569,16 +581,6 @@
             this.dtpdhired.Size = new System.Drawing.Size(154, 20);
             this.dtpdhired.TabIndex = 1;
             // 
-            // btn_edit
-            // 
-            this.btn_edit.Location = new System.Drawing.Point(572, 369);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(129, 23);
-            this.btn_edit.TabIndex = 23;
-            this.btn_edit.Text = "Edit";
-            this.btn_edit.UseVisualStyleBackColor = true;
-            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
-            // 
             // frm_Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -653,5 +655,6 @@
         internal System.Windows.Forms.TextBox txtdrate;
         internal System.Windows.Forms.DateTimePicker dtpdhired;
         internal System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
