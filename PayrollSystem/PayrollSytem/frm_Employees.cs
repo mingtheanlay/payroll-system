@@ -60,8 +60,7 @@ namespace PayrollSytem
                    + "','" + emp.Dob + "','" + emp.BirthPlace + "','" + emp.Sex + "'," + emp.Age + ",'" + emp.Emergency + "')";
                 config.Execute_CUD(sql, "Error to execute.", "Data has been saved in the database.");
                 btnempnew_Click(sender, e);
-            }
-             
+            }   
         }
 
         private void txtcode_TextChanged(object sender, EventArgs e)
