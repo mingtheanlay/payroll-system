@@ -50,6 +50,15 @@ namespace PayrollSytem
                     tsPayroll.Enabled = ability.Payroll;
                     tsUser.Enabled = ability.User;
                     break;
+                default:
+                    ability = new NoPermission();
+                    ability.permission();
+                    tsLogin.Text = ability.Status;
+                    tsLogin.Image = ability.Img;
+                    tsEmployee.Enabled = ability.Employee;
+                    tsPayroll.Enabled = ability.Payroll;
+                    tsUser.Enabled = ability.User;
+                    break;
             }
         }
          
